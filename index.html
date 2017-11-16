@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Raghavendra S DIddimani">
+
+    <title>Raghavendra S Diddimani - UI Developer based from Bangaluru, Karnataka</title>
+
+    <link rel="shortcut icon" href="assets/images/gt_favicon.png">
+    <!-- Bootstrap 4  -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="css/production.min.css">
+
+</head>
+
+<body class="home">
+
+
+    <main id="main">
+
+        <div class="container">
+
+
+            <h2 class="section-title">
+                <span>Recent Works</span>
+            </h2>
+
+
+            <div class="row thumbnails recentworks" id="app">
+
+                <div class="col-sm-6 col-md-4" v-for="work in works">
+                    <a class="thumbnail" id="" href="#" @click.prevent="toggleInfo(work)">
+                        <span class="img">
+									<img v-bind:src='work.images.thumb_url' v-bind:alt='work.name' class="img-responsive" />
+									<span class="cover">
+										<span class="more" class="btn">See details &rarr;</span>
+                        </span>
+                        </span>
+                        <h2 class="title">{{ work.name }} </h2>
+                    </a>
+
+                </div>
+                <!-- //.work -->
+                <!-- model box here  -->
+                <div class="modelbox" v-bind:class="{'open': isOpen}">
+
+                    <span class="btn_close" @click="btn_close()" v-if="!selectedWork.length">
+											<span aria-hidden="true">&times;</span>
+                    </span>
+                    <header class="modelbox_header">
+                        <h1> {{ selectedWork.name }} </h1>
+                        <h2> {{ selectedWork.type }} </h2>
+                        <p> {{ selectedWork.role }}
+                            <span>{{ selectedWork.category }}</span>
+                            <span>{{ selectedWork.platform }}</span>
+                        </p>
+
+                    </header>
+                    <div class="modelbox_content">
+                        <p> {{ selectedWork.description }} </p>
+
+                        <div v-for="img in selectedImages">
+                            <img v-bind:src='img.url' v-bind:alt='selectedWork.name' />
+                            <!-- {{img.image}} -->
+                        </div>
+                    </div>
+                </div>
+                <!-- //.modelbox -->
+
+
+
+            </div>
+            <!-- //.thumbnails end -->
+
+        </div>
+        <!-- /section -->
+
+        </div>
+        <!-- /container -->
+
+    </main>
+
+    <script src="https://unpkg.com/vue@2.5.2/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios@0.12.0/dist/axios.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="script/vue_js.js"></script>
+</body>
+
+</html>

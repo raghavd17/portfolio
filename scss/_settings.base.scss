@@ -1,0 +1,178 @@
+// import the primary library
+// @import        '../bower_components/bourbon/app/assets/stylesheets/bourbon';
+// global switch
+// modify global styling by enabling or disabling optional features
+
+// $enable-flex         : true;
+$enable-rounded      : true;
+$enable-shadows      : false;
+$enable-gradients    : true;
+$enable-transitions  : false;
+$enable-grid-classes : true;
+$enable-baseline-grid: true;
+// $enable-debug-hard   : true;
+
+// paths
+$path-images         : '../img/';
+// $path-fonts          : '../fonts/';
+
+// set the initial em base
+$em-base             : 14px;
+
+
+// colors
+$white               : #fff;
+$black               : #000;
+$gray                : #55595c;
+$gray-dark           : #373a3c;
+$gray-light          : #b3b3b3;
+$gray-lighter        : #dbdbdb;
+$gray-lightest       : #f4f4f4;
+
+// brand color
+// color: brand-color(primary);
+$brand-color: (
+  primary        : #ce4f11, // L Green
+  secondary      : #d35400, // L Orange
+  tertiary       : #c1a36f, // L Brown
+  quaternary     : #3e1b04, // L Coffee
+  quinary       : #181717,
+
+  // grays, black and white
+  gray           : $gray,
+  gray-dark      : $gray-dark,
+  gray-light     : $gray-light,
+  gray-lighter   : $gray-lighter,
+  gray-lightest  : $gray-lightest,
+  white          : $white,
+  black          : $black,
+  dark           : #181717,
+
+  // L colors
+  blue           : #35add5,
+  green          : #87b524,
+  green-lightest : #bcfc32,
+  green-dark     : #70961d,
+  green-darker   : #5d7c19,
+  yellow         : #f9b234,
+  orange         : #fab234,
+
+  // body and text
+  body           : $white,
+  text           : #333,
+  text-heading   : #111,
+  link           : #3d4942,
+
+  // alerts
+  success        : #5cb85c,
+  info           : #5bc0de,
+  warning        : #f0ad4e,
+  danger         : #d9534f,
+
+  // brandcolors.net
+  twitter        : #55acee,
+  facebook       : #4c769a,
+  google        : #dd4b39
+);
+
+// links
+// $link-color             : brand-color(link);
+// $link-decoration        : none;
+// $link-hover-color       : darken($link-color, 15%);
+// $link-hover-decoration  : underline;
+
+
+// font-families
+$font-family-sans-serif : 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-family-serif      : Georgia, 'Times New Roman', Times, serif;
+$font-family-monospace  : Menlo, Monaco, Consolas, 'Courier New', monospace;
+
+$font-family            : 'Open Sans', $font-family-sans-serif;
+$font-family-heading    : 'Open Sans', $font-family-sans-serif;
+// $font-family-icons      : 'imlipop-icons';
+
+
+// typography
+$line-height            : $em-base;
+$line-height-reset      : 1;
+$font-size-base         : $em-base;
+
+// spacing
+$spacing                : $em-base;
+$spacing-half           : $spacing/2;
+$spacing-third          : $spacing/3;
+$spacing-quarter        : $spacing/4;
+$spacing-tiny           : $spacing-quarter/2;
+$spacing-double         : $spacing*2;
+$spacing-thrice         : $spacing*3;
+
+// headings
+$headings-font-family   : $font-family-heading;
+$headings-font-weight   : font-weight(bold);
+$headings-color         : brand-color(text-heading);
+$headings-margin-bottom : $spacing;
+
+// blockquotes
+$blockquote-small-color : brand-color(gray-light);
+
+
+// borders
+$border-radius          : 2px;
+// 50% gives an oval when height != width
+$border-radius-rounded  : 9999em;
+$border-width           : 1px;
+$border-color           : rgba(0, 0, 0, 0.1);
+$border-color-alt       : rgba(255, 255, 255, 0.3);
+
+// grid breakpoints
+//
+// define the minimum and maximum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+$grid-breakpoints: (
+  // extra small screen / phone
+  xs: 0,
+  // small screen / phone
+  sm: 480px,
+  // medium screen / tablet
+  md: 768px,
+  // large screen / desktop
+  lg: 1024px,
+  // extra large screen / wide desktop
+  xl: 1440px
+);
+
+// breakpoints
+$xs-min  : 0em;
+$xs-max: 33.9em;
+$sm-min: 34em;
+$sm-max: 47.9em;
+$md-min: 48em;
+$md-max: 61.9em;
+$lg-min: 62em;
+$lg-max: 74.9em;
+$xl-min: 75em;
+
+$container-spacing-sm: 50px;
+$container-spacing-xs: 30px;
+// grid containers
+// define the maximum width of the container for different screen sizes
+$container-max-widths: (
+  sm: 480px,
+  md: 760px,
+  lg: 1000px,
+  xl: 1140px
+);
+
+// grid columns
+$grid-columns: 12;
+$grid-gutter-width: 20px;
+
+// z-index
+// usage - z-index: z-index(default);
+$z-index: (
+  default       :1,
+  modal         :999,
+  navbar-toggle :10,
+  navbar        :9,
+  cart-summary  : 2
+);

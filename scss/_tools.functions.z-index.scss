@@ -1,0 +1,7 @@
+@function z-index($depth) {
+  @if map-has-key($z-index, $depth) {
+    @return map-get($z-index, $depth);
+  }
+  @warn "Unknown `#{$depth}` in $z-index.";
+  @return null;
+}
