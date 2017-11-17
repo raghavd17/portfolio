@@ -29,6 +29,7 @@ $gray-light          : #b3b3b3;
 $gray-lighter        : #dbdbdb;
 $gray-lightest       : #f4f4f4;
 
+
 // brand color
 // color: brand-color(primary);
 $brand-color: (
@@ -59,7 +60,7 @@ $brand-color: (
 
   // body and text
   body           : $white,
-  text           : #333,
+  text           : #555555,
   text-heading   : #111,
   link           : #3d4942,
 
@@ -74,12 +75,6 @@ $brand-color: (
   facebook       : #4c769a,
   google        : #dd4b39
 );
-
-// links
-// $link-color             : brand-color(link);
-// $link-decoration        : none;
-// $link-hover-color       : darken($link-color, 15%);
-// $link-hover-decoration  : underline;
 
 
 // font-families

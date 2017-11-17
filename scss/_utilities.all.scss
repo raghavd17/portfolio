@@ -1,13 +1,12 @@
 .row {
-  &.no-gutters {
-    @include reset-margin(right);
-    @include reset-margin(left);
-
-    & > [class^="col-"],
-    & > [class*=" col-"] {
-      @include reset-padding(right);
-      @include reset-padding(left);
+    &.no-gutters {
+        @include reset-margin(right);
+        @include reset-margin(left);
+        &>[class^="col-"],
+        &>[class*=" col-"] {
+            @include reset-padding(right);
+            @include reset-padding(left);
+        }
     }
-  }
-
 }
+

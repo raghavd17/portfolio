@@ -8,7 +8,7 @@ $lg-min: 62em; //992px
 $lg-max: 74.9em; //1198.4px
 $xl-min: 75em; //1200px
 
-// @include breakpoint-up(xs-min) { }
+// @include breakpoint-up(sm) { }
 @mixin breakpoint-up($point) {
   @if $point == sm {
     @media (min-width: $sm-min) { @content; }

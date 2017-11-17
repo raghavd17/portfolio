@@ -1,0 +1,25 @@
+.main_header {
+    
+  // padding: 40px 0;
+  @include padding(40px 0);
+    @include margin-bottom(10px);
+    .logo {
+        width: 100%;
+        text-align: center;
+        text-transform: uppercase;
+        @include breakpoint-up(md) {
+            text-align: initial;
+            width: initial;
+        }
+    }
+    .social_links {
+        display: none;
+        @include breakpoint-up(md) {
+            display: block;
+            list-style: none;
+            @include reset-margin(all);
+            @include reset-padding(all);
+            font-size: 1.4rem;
+        }
+    }
+}
