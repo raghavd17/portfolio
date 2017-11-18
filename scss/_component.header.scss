@@ -1,17 +1,81 @@
 .main_header {
-    
-  // padding: 40px 0;
-  @include padding(40px 0);
+    // padding: 40px 0;
+    @include padding(40px 0);
     @include margin-bottom(10px);
     .logo {
-        width: 100%;
+        margin: 0 auto;
         text-align: center;
-        text-transform: uppercase;
+        transition: all 200ms ease-in-out;
+        cursor: pointer;
+        position: relative;
         @include breakpoint-up(md) {
-            text-align: initial;
-            width: initial;
+            // text-align: initial;
+            // width: initial;
+            margin: 0 0 0 auto;
         }
-    }
+        &::after,
+        &::before {
+            position: absolute;
+            top: 0;
+            transition: all 200ms ease-in-out;
+            color: $gray-light;
+        }
+        &::before {
+            left: -25%;
+            content: '<';
+        }
+        &::after {
+            right: -25%;
+            content: '/>';
+        }
+        &:hover {
+            &::before {
+                color: $gray;
+                left: -30%;
+            }
+            &::after {
+                color: $gray;
+                right: -30%;
+            }
+        }
+        a {
+            font-family: 'Gruppo', cursive;
+            position: relative;
+            color: $logo-color;
+            span.r {
+                display: inline-block;
+                font-weight: 600;
+                color: $logo-color;
+                @include margin-left(18px);
+                @include margin-right(15px);
+            }
+            span.d {
+                @include pos-absolute(-38px, auto, auto, -7px);
+                font-size: 90px;
+                -webkit-transition: 600ms ease-in-out;
+                -moz-transition: 600ms ease-in-out;
+                -o-transition: 600ms ease-in-out;
+                transition: 600ms ease-in-out;
+            }
+            span.d,
+            span.align-bottom {
+                color: $logo-color;
+            }
+            span.d,
+            span.align-bottom {
+                vertical-align: bottom;
+            }
+            &:hover {
+                text-decoration: none;
+                color: $logo-color;
+                span.d {
+                    // color: $gray-dark;
+                    transform: rotate(-360deg);
+                }
+            }
+        }
+        // a link
+    } //.logo 
     .social_links {
         display: none;
         @include breakpoint-up(md) {

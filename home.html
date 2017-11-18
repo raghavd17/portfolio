@@ -12,11 +12,15 @@
     <link rel="shortcut icon" href="assets/images/gt_favicon.png">
     <!-- Bootstrap 4  -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet">
+
+    <!-- animate css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 
 
     <!-- Fonts -->
-    <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gruppo" rel="stylesheet">
+
     <!-- Custom styles -->
     <link rel="stylesheet" href="css/production.min.css">
 
@@ -29,28 +33,33 @@
 
     <div class="container  h-100">
         <header class="main_header d-flex justify-content-between">
-            <h1 class="logo">
-                <a href="javascript:">Raghav</a>
+            <h1 class="logo animated  fadeInRight">
+                <a href="javascript:" title="Raghavendra S Diddmani">
+                    
+                    <span class="r">R</span><span class="d">D</span><span class="align-bottom"> iddimani</span>
+                    </span>
+                    </span>
+                </a>
             </h1>
-            <ul class="social_links align-self-center">
+            <!-- <ul class="social_links align-self-center">
                 <li>linkedin</li>
-            </ul>
+            </ul> -->
 
 
         </header>
         <div class="row w-100">
-            <section class="col-md-10">
-                <header>
-                    <!-- <h1>Raghavendra S Diddimani</h1>  -->
-                    <h2 style="font-size: 3.5rem; letter-spacing: -0.05em; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);" class=""><em>Namasthe,</em> </h2>
-                </header>
-
+            <section class="col-md-10 welcome">
                 <article>
 
-                    <p class="normal">My name is
-                        <em class="text-primary">Raghavendra S Diddimani</em>. I am a Front-end Developer living in Bengaluru, India.</p>
+                    <!-- <h2>Namasthe, </h2> -->
+                    <h2><span class="txt-rotate" data-period="2000" data-rotate='[ "ನಮಸ್ಕಾರ,", "नमस्ते,", "Namasthe," ]'></span></h2>
 
-                    <p>Front End Development is building out the visual components of a website. Using HTML, CSS and Javascript/jQuery, Develop pixel perfect, responsive websites across various platforms. This also may include integrating a CMS.</p>
+                    <p class="lead">I am
+                        <span class="highlight-container"><span class="highlight"> Raghavendra S Diddimani.</span></span> <br/>A Front-end Developer based out in Bengaluru, Karnataka, INDIA.</p>
+
+                    <p>I build wesbite & UI out of the visual components. Using HTML, CSS and Javascript/jQuery, Develop pixel perfect, responsive page across various platforms.</p>
+                    <p>Currently I am working as <em>Lead UI Developer</em> for <em>Eppix e-solutions</em> check out my profile on <a href="https://www.linkedin.com/in/raghavd17" target="_blank">linkedin</a></p>
+                    <!-- <p>I create user interfaces, shape web page and ecommerce page.</p>-->
 
                 </article>
             </section>
@@ -62,10 +71,10 @@
                 <span class="lipsum" style="font-size: 3.5em;     letter-spacing: -0.05em;  color: #61CDF5;">
                    Front-end Developer.
                 </span>
-                <h2 style="font-size: 4.1em; line-height: 1em; color: #555555">Web &amp; UI Developer </h2>
-            </div>
-            <p>Raghavendra S Diddimani is a Bengaluru based UI Developer. Until currently worked at&nbsp;<em>Ushamartin Technologies </em> as part of Eppix e-Solutions. Before that, he helped bring art to the cart as a product designer for <a href="http://bigcartel.com"
-                    class="mti_font_element">Big&nbsp;Cartel</arti>.</p>
+                        <h2 style="font-size: 4.1em; line-height: 1em; color: #555555">Web &amp; UI Developer </h2>
+        </div>
+        <p>Raghavendra S Diddimani is a Bengaluru based UI Developer. Until currently worked at&nbsp;<em>Ushamartin Technologies </em> as part of Eppix e-Solutions. Before that, he helped bring art to the cart as a product designer for <a href="http://bigcartel.com"
+                class="mti_font_element">Big&nbsp;Cartel</arti>.</p>
             -->
 
 
@@ -81,6 +90,62 @@
     <script src="https://unpkg.com/axios@0.12.0/dist/axios.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="script/vue_js.js"></script>
+    <script>
+        var TxtRotate = function(el, toRotate, period) {
+            this.toRotate = toRotate;
+            this.el = el;
+            this.loopNum = 0;
+            this.period = parseInt(period, 15) || 3000;
+            this.txt = '';
+            this.tick();
+            this.isDeleting = false;
+        };
+
+        TxtRotate.prototype.tick = function() {
+            var i = this.loopNum % this.toRotate.length;
+            var fullTxt = this.toRotate[i];
+
+            if (this.isDeleting) {
+                this.txt = fullTxt.substring(0, this.txt.length - 1);
+            } else {
+                this.txt = fullTxt.substring(0, this.txt.length + 1);
+            }
+
+            this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
+
+            var that = this;
+            var delta = 300 - Math.random() * 100;
+
+            if (this.isDeleting) {
+                delta /= 2;
+            }
+
+            if (!this.isDeleting && this.txt === fullTxt) {
+                delta = this.period;
+                this.isDeleting = true;
+            } else if (this.isDeleting && this.txt === '') {
+                this.isDeleting = false;
+                this.loopNum++;
+                delta = 500;
+            }
+
+            setTimeout(function() {
+                that.tick();
+            }, delta);
+        };
+
+        window.onload = function() {
+            var elements = document.getElementsByClassName('txt-rotate');
+            for (var i = 0; i < elements.length; i++) {
+                var toRotate = elements[i].getAttribute('data-rotate');
+                var period = elements[i].getAttribute('data-period');
+                if (toRotate) {
+                    new TxtRotate(elements[i], JSON.parse(toRotate), period);
+                }
+            }
+
+        };
+    </script>
 </body>
 
 </html>
