@@ -1,7 +1,7 @@
 {
     "work": [{
             "id": 1,
-            "name": "STORY",
+            "name": "Story",
             "type": "iPad App (POC)",
             "role": "UI & UX Design",
             "category": "App",
@@ -47,7 +47,7 @@
             }
         }, {
             "id": 3,
-            "name": "banking",
+            "name": "Banking",
             "type": "iPad App (POC)",
             "role": "UI & UX Design",
             "category": "App",

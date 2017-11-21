@@ -1,0 +1,36 @@
+ .highlight,
+ .highlight--el {
+     position: relative;
+ }
+ 
+ .highlight {
+     display: inline-block;
+     &:before,
+     &:after {
+         content: ' ';
+         display: block;
+         height: 80%;
+         width: 100%;
+         margin-left: -3px;
+         margin-right: -3px;
+         @include pos-absolute(auto, auto, auto, auto);
+     }
+     &:before {
+         background: rgba($highlight, 0.3);
+         transform: rotate(1deg);
+         top: -1px;
+         left: -1px;
+     }
+     &:after {
+         background: rgba($highlight, 0.4);
+         top: 0px;
+         right: -5px;
+         left: -5px;
+         transform: rotate(-1deg);
+     }
+     &--el {
+         color: #333;
+         z-index: 100;
+         font-weight: 600;
+     }
+ }

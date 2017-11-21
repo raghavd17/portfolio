@@ -8,69 +8,55 @@
         transition: all 200ms ease-in-out;
         cursor: pointer;
         position: relative;
-        @include breakpoint-up(md) {
-            // text-align: initial;
-            // width: initial;
+        @include breakpoint-up(sm) {
             margin: 0 0 0 auto;
         }
-        &::after,
-        &::before {
-            position: absolute;
-            top: 0;
-            transition: all 200ms ease-in-out;
-            color: $gray-light;
-        }
-        &::before {
-            left: -25%;
-            content: '<';
-        }
-        &::after {
-            right: -25%;
-            content: '/>';
-        }
-        &:hover {
-            &::before {
-                color: $gray;
-                left: -30%;
-            }
-            &::after {
-                color: $gray;
-                right: -30%;
-            }
-        }
+        
+       
         a {
             font-family: 'Gruppo', cursive;
             position: relative;
             color: $logo-color;
+            font-weight: 600;
             span.r {
                 display: inline-block;
-                font-weight: 600;
                 color: $logo-color;
                 @include margin-left(18px);
                 @include margin-right(15px);
+                -webkit-transition: all 200ms ease-in-out;
+                -moz-transition: all 200ms ease-in-out;
+                -o-transition: all 200ms ease-in-out;
+                transition: all 200ms ease-in-out;
             }
             span.d {
                 @include pos-absolute(-38px, auto, auto, -7px);
                 font-size: 90px;
-                -webkit-transition: 600ms ease-in-out;
-                -moz-transition: 600ms ease-in-out;
-                -o-transition: 600ms ease-in-out;
-                transition: 600ms ease-in-out;
+                -webkit-transition: color 200ms ease-in-out;
+                -moz-transition: color 200ms ease-in-out;
+                -o-transition: color 200ms ease-in-out;
+                transition: color 200ms ease-in-out;
             }
             span.d,
             span.align-bottom {
-                color: $logo-color;
+                color: rgba($logo-color, 0.6);
             }
-            span.d,
             span.align-bottom {
-                vertical-align: bottom;
+                @include pos-absolute(auto, auto, -25px, 0px);
+                font-size: 1.0rem;
+                -webkit-transition: color 200ms ease-in-out;
+                -moz-transition: color 200ms ease-in-out;
+                -o-transition: color 200ms ease-in-out;
+                transition: color 200ms ease-in-out;
             }
             &:hover {
                 text-decoration: none;
                 color: $logo-color;
-                span.d {
-                    // color: $gray-dark;
-                    transform: rotate(-360deg);
+                span.r {
+                    transform: rotate(360deg)
+                }
+                span.d,
+                span.align-bottom {
+                    color: $link-color;
                 }
             }
         }

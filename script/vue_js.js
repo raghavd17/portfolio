@@ -6,7 +6,26 @@ var app = new Vue({
         image: [],
         img: [],
         selectedImages: [],
-        isOpen: false
+        isOpen: false,
+        hello: 'Namasthe, ',
+        lead: `I am <span class="highlight"><span class="highlight--el"> Raghavendra S Diddimani.</span>
+                </span><br/>A Front-end Developer based out in Bengaluru, Karnataka, INDIA.`,
+        aboutShort: `<p class="animated  slideInRight">I build wesbite & UI out of the visual components. Using HTML, CSS and Javascript/jQuery, Develop
+                            pixel perfect, responsive page across various platforms.</p>
+                        <p class="animated  slideInRight">Currently I am working as
+                            <span class="highlight">
+                                <span class="highlight--el">
+                                    <strong>Lead UI Developer</strong>
+                                </span>
+                            </span> at
+                            <strong>Usha Martin Technologies</strong> check out my profile on
+                            <a href="https://www.linkedin.com/in/raghavd17" target="_blank">linkedin</a>
+                        </p>
+                        <!-- <p>I create user interfaces, shape web page and ecommerce page.</p>-->
+                        <p class="animated slideInUp ">
+                            <a href="#" class="link-primary"> Checkout my recent works.. </a>
+                        </p>`,
+        seemore: 'See details &rarr;'
     },
     mounted: function() {
         this.getItems()
@@ -15,9 +34,6 @@ var app = new Vue({
         getItems: function() {
             var app = this
             var url = 'json/work.json'
-                // var id = ''
-                // var accessToken = '',
-                // var newUrl = 'https://graph.facebook.com/' + id + '/picture?access_token=' + accessToken
             axios.get(url).then(function(response) {
                 app.works = response.data.work
                     // console.log(response);

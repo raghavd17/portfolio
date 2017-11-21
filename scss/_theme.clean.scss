@@ -1,0 +1,33 @@
+html,
+body {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+
+/* CSS only for examples not required for centering */
+
+.container {
+    height: 100%;
+}
+
+body {
+    font-size: 1rem;
+    transition: all 200ms ease-in-out;
+    background: $white;
+    font-family: 'Nunito Sans', sans-serif;
+    @include breakpoint-up(md) {
+        font-size: 1.2rem;
+    }
+    @include breakpoint-up(lg) {
+        font-size: 1.3rem;
+    }
+    font-family: 'Nunito Sans',
+    sans-serif;
+    & a {
+        color: #333;
+        &:hover {
+            color: #333;
+        }
+    }
+}

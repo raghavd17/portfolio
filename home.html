@@ -28,60 +28,32 @@
 
 <body class="home">
 
-    <!-- text effect from this -->
-    <!-- https://freebiesupply.com/blog/css-text-effects-from-codepen/ -->
-
-    <div class="container  h-100">
+    <div class="container  h-100" id="app">
         <header class="main_header d-flex justify-content-between">
-            <h1 class="logo animated  fadeInRight">
+            <h1 class="logo">
                 <a href="javascript:" title="Raghavendra S Diddmani">
-                    
-                    <span class="r">R</span><span class="d">D</span><span class="align-bottom"> iddimani</span>
-                    </span>
-                    </span>
+
+                    <span class="r">R</span>
+                    <span class="d">D</span>
+                    <span class="align-bottom"> iddimani</span>
+
                 </a>
             </h1>
-            <!-- <ul class="social_links align-self-center">
-                <li>linkedin</li>
-            </ul> -->
 
 
         </header>
-        <div class="row w-100">
-            <section class="col-md-10 welcome">
+        <div class="row">
+            <section class="col-lg-9 welcome">
                 <article>
-
-                    <!-- <h2>Namasthe, </h2> -->
-                    <h2><span class="txt-rotate" data-period="2000" data-rotate='[ "ನಮಸ್ಕಾರ,", "नमस्ते,", "Namasthe," ]'></span></h2>
-
-                    <p class="lead">I am
-                        <span class="highlight-container"><span class="highlight"> Raghavendra S Diddimani.</span></span> <br/>A Front-end Developer based out in Bengaluru, Karnataka, INDIA.</p>
-
-                    <p>I build wesbite & UI out of the visual components. Using HTML, CSS and Javascript/jQuery, Develop pixel perfect, responsive page across various platforms.</p>
-                    <p>Currently I am working as <em>Lead UI Developer</em> for <em>Eppix e-solutions</em> check out my profile on <a href="https://www.linkedin.com/in/raghavd17" target="_blank">linkedin</a></p>
-                    <!-- <p>I create user interfaces, shape web page and ecommerce page.</p>-->
+                    <h2>{{hello}}</h2>
+                    <p class="lead animated slideInLeft" v-html="lead"> </p>
+                    <div v-html="aboutShort"> </div>
 
                 </article>
             </section>
 
         </div>
-
-        <!-- <div class="title">
-                
-                <span class="lipsum" style="font-size: 3.5em;     letter-spacing: -0.05em;  color: #61CDF5;">
-                   Front-end Developer.
-                </span>
-                        <h2 style="font-size: 4.1em; line-height: 1em; color: #555555">Web &amp; UI Developer </h2>
-        </div>
-        <p>Raghavendra S Diddimani is a Bengaluru based UI Developer. Until currently worked at&nbsp;<em>Ushamartin Technologies </em> as part of Eppix e-Solutions. Before that, he helped bring art to the cart as a product designer for <a href="http://bigcartel.com"
-                class="mti_font_element">Big&nbsp;Cartel</arti>.</p>
-            -->
-
-
-
-    </div>
-    <!-- /section -->
-
+        <!--//.row end  -->
     </div>
     <!-- /container -->
 
@@ -90,62 +62,6 @@
     <script src="https://unpkg.com/axios@0.12.0/dist/axios.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="script/vue_js.js"></script>
-    <script>
-        var TxtRotate = function(el, toRotate, period) {
-            this.toRotate = toRotate;
-            this.el = el;
-            this.loopNum = 0;
-            this.period = parseInt(period, 15) || 3000;
-            this.txt = '';
-            this.tick();
-            this.isDeleting = false;
-        };
-
-        TxtRotate.prototype.tick = function() {
-            var i = this.loopNum % this.toRotate.length;
-            var fullTxt = this.toRotate[i];
-
-            if (this.isDeleting) {
-                this.txt = fullTxt.substring(0, this.txt.length - 1);
-            } else {
-                this.txt = fullTxt.substring(0, this.txt.length + 1);
-            }
-
-            this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
-
-            var that = this;
-            var delta = 300 - Math.random() * 100;
-
-            if (this.isDeleting) {
-                delta /= 2;
-            }
-
-            if (!this.isDeleting && this.txt === fullTxt) {
-                delta = this.period;
-                this.isDeleting = true;
-            } else if (this.isDeleting && this.txt === '') {
-                this.isDeleting = false;
-                this.loopNum++;
-                delta = 500;
-            }
-
-            setTimeout(function() {
-                that.tick();
-            }, delta);
-        };
-
-        window.onload = function() {
-            var elements = document.getElementsByClassName('txt-rotate');
-            for (var i = 0; i < elements.length; i++) {
-                var toRotate = elements[i].getAttribute('data-rotate');
-                var period = elements[i].getAttribute('data-period');
-                if (toRotate) {
-                    new TxtRotate(elements[i], JSON.parse(toRotate), period);
-                }
-            }
-
-        };
-    </script>
 </body>
 
 </html>
