@@ -89,6 +89,9 @@ $img-height: 180px;
         }
         .more {
             transform: translate(10px, 10px);
+            &:hover {
+                color: $link-color;
+            }
         }
     }
 }
