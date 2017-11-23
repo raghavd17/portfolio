@@ -17,9 +17,9 @@ var app = new Vue({
                                         <strong>Lead UI Developer</strong>
                                     </span>
                                 </span> at
-                                <strong>Usha Martin Technologies</strong>. In the past I had the opportunity to work with companies such as <strong>Razorfish</strong>, <strong>Schneider Electric</strong>, <strong>Ninestars</strong> & <strong>2adpro Media Solutions</strong>. 
+                                <strong>Usha martin technologies</strong>. In the past I had the opportunity to work with companies such as <strong>Razorfish</strong>, <strong>Schneider electric</strong>, <strong>Ninestars</strong> & <strong>2adpro media solutions</strong>. 
                             </p>
-                            <p>check out my profile on <a href="https://www.linkedin.com/in/raghavd17" target="_blank">linkedin</a></p>
+                            <p>check out my profile on <a href="https://www.linkedin.com/in/raghavd17" target="_blank">linkedIn</a></p>
                             <!-- <p>I create user interfaces, shape web page and ecommerce page.</p>-->
                             <p class="animated slideInUp ">
                                 <a href="#" class="link-primary"> Checkout my recent works.. </a>
