@@ -10,8 +10,8 @@ var app = new Vue({
         hello: 'Namasthe, ',
         lead: `I am <span class="highlight"><span class="highlight--el"> Raghavendra S Diddimani.</span>
                     </span><br/>Front-end &amp; Web Developer based out in <strong>Bengaluru</strong>.`,
-        aboutShort: `<p class="animated  slideInRight">I build wesbite & User Interface out of the visual components. Using HTML, CSS and Javascript/jQuery, Develop pixel perfect, Responsive website across various platforms.</p>
-                            <p class="animated  slideInRight">Currently working as
+        aboutShort: `<p>I build wesbite & User Interface out of the visual components. Using HTML, CSS and Javascript/jQuery, Develop pixel perfect, Responsive website across various platforms.</p>
+                            <p>Currently working as
                                 <span class="highlight">
                                     <span class="highlight--el">
                                         <strong>Lead UI Developer</strong>

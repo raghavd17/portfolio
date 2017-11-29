@@ -7,7 +7,10 @@ body {
 
 /* CSS only for examples not required for centering */
 
-body {
+[v-cloak] {
+    display: none;
+}
+    body {
     font-size: 100%;
     transition: all 200ms ease-in-out;
     background: $white;
