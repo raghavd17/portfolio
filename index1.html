@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Raghavendra S DIddimani">
+
+    <title>Raghavendra S Diddimani - UI Developer based from Bangaluru, Karnataka</title>
+
+    <link rel="shortcut icon" href="assets/images/gt_favicon.png">
+    <!-- Bootstrap 4  -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+    <!-- animate css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gruppo" rel="stylesheet">
+
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="css/production.min.css">
+
+</head>
+
+<body class="home">
+
+    <div class="container  h-100" id="info">
+        <header class="main_header d-flex justify-content-between">
+            <h1 class="logo">
+                <a href="javascript:" title="Raghavendra S Diddmani">
+
+                    <span class="r">R</span>
+                    <span class="d">D</span>
+                    <span class="align-bottom"> iddimani</span>
+
+                </a>
+            </h1>
+
+
+        </header>
+        <div class="row">
+            <section class="col-lg-9 welcome">
+                <article>
+                    <h2 v-for='info in bio'>{{bio.category}}</h2>
+                    <!--<p class="lead animated slideInLeft" v-html="lead"> </p>
+                    <div v-html="aboutShort"> </div>
+                    -->
+
+                </article>
+            </section>
+
+        </div>
+        <!--//.row end  -->
+    </div>
+    <!-- /container -->
+
+
+    <script src="https://unpkg.com/vue@2.5.2/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios@0.12.0/dist/axios.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        var app = new Vue({
+            el: "#info",
+            data: {
+                myinfo: '',
+                bio: '',
+                welcome: ''
+            },
+            mounted: function() {
+                this.getinfo()
+            },
+            methods: {
+
+                getinfo: function() {
+                    var info = this
+                    var url = 'json/bio.json'
+                    axios.get(url).then(function(response) {
+                        info.myinfo = response.data
+                        info.bio = info.myinfo.bio
+                        console.log(info.bio);
+                    })
+
+                },
+
+            }
+        });
+    </script>
+</body>
+
+</html>

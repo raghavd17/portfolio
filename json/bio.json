@@ -1,0 +1,12 @@
+{
+    "bio": [{
+            "welcome": "Namashte",
+            "name": "Raghavendra",
+            "type": "iPad App (POC)",
+            "role": "UI & UX Design",
+            "category": "App",
+            "platform ": "iOS",
+            "description": "Short description about the painting"
+        }
+    ]
+}

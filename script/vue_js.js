@@ -36,7 +36,7 @@ var app = new Vue({
             var url = 'json/work.json'
             axios.get(url).then(function(response) {
                 app.works = response.data.work
-                    // console.log(response);
+                console.log(app.works);
             })
         },
         // getinfo: function() {

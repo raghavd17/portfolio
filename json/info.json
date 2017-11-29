@@ -1,5 +1,4 @@
 {
-    "bio": {
             "welcome": "Namasthe,",
             "lead": 'I am <span class="highlight"><span class="highlight--el"> Raghavendra S Diddimani.</span>
                 </span><br/>A Front-end Developer based out in Bengaluru, Karnataka, INDIA.',
@@ -18,5 +17,5 @@
                             <a href="#" class="link-primary"> Checkout my recent works.. </a>
                         </p>',
             "seemore": "See details &rarr;"
-        }
+        
 }
