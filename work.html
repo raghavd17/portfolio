@@ -26,11 +26,10 @@
             <span>Recent Works</span>
         </h2>
 
-        <div class="row thumbnails recentworks" id="app">
+        <div class="recentworks" id="app">
 
-            <div class="col-md-6 col-lg-4" v-for="work in works">
+            <div class="items" v-for="work in works">
                 <a class="thumbnail" id="" href="#" @click.prevent="toggleInfo(work)">
-
                     <div class="img">
                         <img v-bind:src='work.images.thumb_url' v-bind:alt='work.name' class="img-responsive" />
                         <span class="cover">

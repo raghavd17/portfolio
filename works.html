@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Raghavendra S DIddimani">
+
+    <title>Raghavendra S Diddimani - UI Developer based from Bangaluru, Karnataka</title>
+
+    <link rel="shortcut icon" href="assets/images/gt_favicon.png">
+
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet">
+    <!-- logo font -->
+    <link href="https://fonts.googleapis.com/css?family=Gruppo" rel="stylesheet">
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="css/production.min.css">
+
+</head>
+
+<body class="home">
+    <div class="container">
+
+
+
+
+        <div class="h-100" id="app">
+            <header class="main_header">
+                <h1 class="logo">
+                    <a href="index.html" title="Raghavendra S Diddmani">
+
+                        <span class="r">R</span>
+                        <span class="d">D</span>
+                        <span class="align-bottom"> iddimani</span>
+
+                    </a>
+                </h1>
+            </header>
+
+
+            <main>
+                <section class="works">
+                    <h2 class="section-title">
+                        <span>Recent Works</span>
+                    </h2>
+                    <div class=" recentworks" id="app">
+
+                        <div class="items" v-for="work in works">
+                            <a class="thumbnail" id="" href="#" @click.prevent="toggleInfo(work)">
+                                <div class="img">
+                                    <img v-bind:src='work.images.thumb_url' v-bind:alt='work.name' class="img-responsive" />
+                                    <span class="cover">
+                                <span class="more" class="btn" v-html="seemore"></span>
+                                    </span>
+                                </div>
+                                <h2 class="title">{{ work.name }} </h2>
+                            </a>
+
+                        </div>
+                        <!-- //.work -->
+                        <!-- model box here  -->
+                        <div class="modelbox" v-bind:class="{'open': isOpen}">
+
+                            <span class="btn_close" @click="btn_close()" v-bind:class="{'open': isOpen}">
+                        <span aria-hidden="true">&times;</span>
+                            </span>
+                            <header class="modelbox_header">
+                                <h2> <span class="highlight"><span class="highlight--el">{{ selectedWork.name }}</span></span> <small>{{ selectedWork.type }}</small></h2>
+
+                                <p> {{ selectedWork.role }}
+                                    <span>{{ selectedWork.category }}</span>
+                                    <span>{{ selectedWork.platform }}</span>
+                                </p>
+
+                            </header>
+                            <div class="modelbox_content">
+                                <p> {{ selectedWork.description }} </p>
+
+                                <div v-for="img in selectedImages">
+                                    <img v-bind:src='img.url' v-bind:alt='selectedWork.name' />
+                                </div>
+                            </div>
+                        </div>
+                        <!-- //.modelbox -->
+                    </div>
+                    <!-- //.thumbnails end -->
+                </section>
+                <!-- //.works end -->
+            </main>
+
+
+            <footer class="footer animated slideInUp">
+                <section class="footer__copy">{{footer_copy}}</section>
+                <section class="footer__info">{{email}} | {{cell}}</section>
+            </footer>
+        </div>
+        <!-- /wrapper -->
+    </div>
+    <!-- //.container -->
+
+
+    <script src="https://unpkg.com/vue@2.5.2/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios@0.12.0/dist/axios.min.js"></script>
+    <script src="script/vue_js.js"></script>
+</body>
+
+</html>

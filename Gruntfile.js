@@ -43,8 +43,7 @@ module.exports = function(grunt) {
                 // 'bower_components/angular/angular.js',
                 // 'bower_components/angular/angular-route.js',
                 // 'bower_components/jquery/dist/jquery.js',
-                'script/script.js',
-                'script/main.js'],
+                'script/vue_js.js'],
           dest: 'script/production.concat.js'
         },
         // extrasJs: {
@@ -91,7 +90,7 @@ module.exports = function(grunt) {
         },
         alljsfile: {
           // src: ['Gruntfile.js', 'script/*.js']
-          src: ['Gruntfile.js', 'script/main.js', 'script/app.js']
+          src: ['Gruntfile.js', 'script/main.js', 'script/vue_js.js']
         },
     },
     watch: {
@@ -109,7 +108,7 @@ module.exports = function(grunt) {
 grunt.loadNpmTasks('grunt-contrib-concat');
 grunt.loadNpmTasks('grunt-contrib-jshint');
 grunt.loadNpmTasks('grunt-contrib-uglify');
-grunt.loadNpmTasks('grunt-contrib-qunit');
+// grunt.loadNpmTasks('grunt-contrib-qunit');
 grunt.loadNpmTasks('grunt-contrib-watch');
 grunt.loadNpmTasks('grunt-contrib-sass');
 // grunt.loadNpmTasks('grunt-iconfont');

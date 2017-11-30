@@ -1,18 +1,16 @@
 .main_header {
-    // padding: 40px 0;
-    @include padding(40px 0);
-    @include margin-bottom(10px);
+    display: grid;
+    @include padding(20px 0);
     .logo {
-        margin: 0 auto;
-        text-align: center;
+        @include reset-margin(all);
         transition: all 200ms ease-in-out;
         cursor: pointer;
         position: relative;
-        @include breakpoint-up(sm) {
-            margin: 0 0 0 auto;
+        justify-self: center;
+        @include breakpoint-up(md) {
+            justify-self: end;
+            margin-right: 10px;
         }
-        
-       
         a {
             font-family: 'Gruppo', cursive;
             position: relative;
@@ -29,7 +27,7 @@
                 transition: all 200ms ease-in-out;
             }
             span.d {
-                @include pos-absolute(-38px, auto, auto, -7px);
+                @include pos-absolute(-55px, auto, auto, -7px);
                 font-size: 90px;
                 -webkit-transition: color 200ms ease-in-out;
                 -moz-transition: color 200ms ease-in-out;
@@ -41,7 +39,7 @@
                 color: rgba($logo-color, 0.6);
             }
             span.align-bottom {
-                @include pos-absolute(auto, auto, -25px, 0px);
+                @include pos-absolute(auto, auto, auto, 0px);
                 font-size: 1.0rem;
                 -webkit-transition: color 200ms ease-in-out;
                 -moz-transition: color 200ms ease-in-out;

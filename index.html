@@ -10,8 +10,7 @@
     <title>Raghavendra S Diddimani - UI Developer based from Bangaluru, Karnataka</title>
 
     <link rel="shortcut icon" href="assets/images/gt_favicon.png">
-    <!-- Bootstrap 4  -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
 
     <!-- animate css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
@@ -19,6 +18,7 @@
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet">
+    <!-- logo font -->
     <link href="https://fonts.googleapis.com/css?family=Gruppo" rel="stylesheet">
 
     <!-- Custom styles -->
@@ -27,40 +27,65 @@
 </head>
 
 <body class="home">
-
-    <div class="container  h-100" id="app">
-        <header class="main_header d-flex justify-content-between">
-            <h1 class="logo">
-                <a href="javascript:" title="Raghavendra S Diddmani">
-
-                    <span class="r">R</span>
-                    <span class="d">D</span>
-                    <span class="align-bottom"> iddimani</span>
-
-                </a>
-            </h1>
+    <div class="container">
 
 
-        </header>
-        <div class="row">
-            <section class="col-lg-9 welcome">
+        <div class="wrapper h-100" id="app">
+            <header class="main_header">
+                <h1 class="logo">
+                    <a href="index.html" title="Raghavendra S Diddmani">
+
+                        <span class="r">R</span>
+                        <span class="d">D</span>
+                        <span class="align-bottom"> iddimani</span>
+
+                    </a>
+                </h1>
+
+
+            </header>
+
+
+            <main>
+                <section class="main welcome">
                     <h2 class="animated slideInLeft">{{hello}}</h2>
-                    <p class="lead animated slideInLeft" v-html="lead"> </p>
-                    <div class="animated  slideInRight" v-html="aboutShort"> </div>
-            </section>
+                    <p class="lead animated slideInLeft"> I am
+                        <span class="highlight"><span class="highlight--el"> Raghavendra S Diddimani.</span>
+                        </span><br/>Front-end &amp; Web Developer based out in <strong>Bengaluru</strong>.</p>
+                    <div class="animated  slideInRight">
+                        <p>I build wesbite & User Interface out of the visual components. Using HTML, CSS and Javascript/jQuery, Develop pixel perfect, Responsive website across various platforms.</p>
+                        <p>Currently working as
+                            <span class="highlight">
+                                    <span class="highlight--el">
+                                        <strong>Lead UI Developer</strong>
+                                    </span>
+                            </span> at
+                            <strong>Usha martin technologies</strong>. In the past I had the opportunity to work with companies such as <strong>Razorfish</strong>, <strong>Schneider electric</strong>, <strong>Ninestars</strong> & <strong>2adpro media solutions</strong>.
+                        </p>
+                        <p>check out my profile on <a href="https://www.linkedin.com/in/raghavd17" target="_blank">linkedIn</a></p>
+                        <!-- <p>I create user interfaces, shape web page and ecommerce page.</p>-->
+                        <p class="animated slideInUp ">
+                            <a href="#" class="link-primary"> Checkout my recent works.. </a>
+                        </p>
+                    </div>
+                </section>
+            </main>
+
+
+            <footer class="footer animated slideInUp">
+                <section class="footer__copy">{{footer_copy}}</section>
+                <section class="footer__info">{{email}} | {{cell}}</section>
+            </footer>
         </div>
-        <!--//.row end  -->
-        <footer>
-            <div>&copy; Raghavendra </div>
-        </footer>
+        <!-- /wrapper -->
     </div>
-    <!-- /container -->
+    <!-- //.container -->
 
-
-    <script src="https://unpkg.com/vue@2.5.2/dist/vue.js"></script>
+    <!-- <script src="https://unpkg.com/vue@2.5.2/dist/vue.js"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script src="https://unpkg.com/axios@0.12.0/dist/axios.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="script/vue_js.js"></script>
+    <!--<script src="script/vue_js.js"></script>  -->
+    <script src="js/production.min.js"></script>
 </body>
 
 </html>

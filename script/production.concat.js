@@ -1,80 +1,74 @@
-/*! lilpop - v1.0.0 - 2017-11-23
+/*! lilpop - v1.0.0 - 2017-11-30
 * http://homepage.com
 * Copyright (c) 2017 ; Licensed  */
-jQuery(document).ready(function($) {
+var app = new Vue({
+    el: "#app",
+    data: {
+        works: '',
+        selectedWork: '',
+        image: [],
+        img: [],
+        selectedImages: [],
+        isOpen: false,
+        hello: 'Namasthe, ',
+        seemore: 'See details &rarr;',
+        footer_copy: '© Raghavendra S Diddimani - Made with Vue.js ',
+        email: 'raghavd17@gmail.com',
+        cell: '9845057300'
+        
+    },
+    mounted: function() {
+        this.getWorks();
+            // this.getinfo()
+    },
+    methods: {
+        getWorks: function() {
+            var app = this;
+            var url = 'json/work.json';
+            axios.get(url).then(function(response) {
+                app.works = response.data.work;
+                console.log(app.works);
+            });
+        },
+        // getinfo: function() {
+        //     var info = this
+        //     var url = 'json/info.json'
+        //     axios.get(url).then(function(response) {
+        //         info.myinfo = response.data
+        //         console.log(info.myinfo);
+        //     })
 
-	var my_nav = $('.navbar-sticky');
-	// grab the initial top offset of the navigation
-	var sticky_navigation_offset_top = my_nav.offset().top;
-
-	// our function that decides weather the navigation bar should have "fixed" css position or not.
-	var sticky_navigation = function(){
-		var scroll_top = $(window).scrollTop(); // our current vertical position from the top
-
-		// if we've scrolled more than the navigation, change its position to fixed to stick to top, otherwise change it back to relative
-		if (scroll_top > sticky_navigation_offset_top) {
-			my_nav.addClass( 'stick' );
-		} else {
-			my_nav.removeClass( 'stick' );
-		}
-	};
-
-	var initio_parallax_animation = function() {
-		$('.parallax').each( function(i, obj) {
-			var speed = $(this).attr('parallax-speed');
-			if( speed ) {
-				var background_pos = '-' + (window.pageYOffset / speed) + "px";
-				$(this).css( 'background-position', 'center ' + background_pos );
-			}
-		});
-	}
-
-	// run our function on load
-	sticky_navigation();
-
-	// and run it again every time you scroll
-	$(window).scroll(function() {
-		 sticky_navigation();
-		 initio_parallax_animation();
-	});
-
+        // },
+        toggleInfo: function(selectedWork) {
+            var app = this;
+            app.selectedWork = selectedWork;
+            app.selectedImages = app.selectedWork.images.image;
+            console.log(selectedWork);
+            this.slideAnimation();
+        },
+        // slide animation function
+        slideAnimation: function() {
+            this.isOpen = true;
+            $('body').css('overflow', 'hidden');
+            // $('.btn_close').fadeIn();
+            $(".modelbox").scrollTop(0);
+            // $('.modelbox').animate({
+            //     marginLeft: '0'
+            // }, 300, function() {
+            //     $('body').css('overflow', 'hidden');
+            //     $('.btn_close').fadeIn();
+            //     $(".modelbox").scrollTop(0);
+            // });
+        },
+        // slideAnimation
+        // close btn function
+        btn_close: function() {
+            this.isOpen = false;
+                // $('.btn_close').fadeOut();
+                // $('.modelbox').animate({
+                //     marginLeft: '100%'
+                // }, 300);
+            $('body').removeAttr('style');
+        }
+    }
 });
-;(function($) {
-    'use strict';
-  $(window).scroll(function() {
-    resizeMenu();
-  });
-  $(window).resize(function() {
-    resizeMenu();
-  });
-  // on scroll window hide menu breakpoints for mobile
-  function resizeMenu () {
-    var windowSize = $(window).width();
-    var sm = 480;
-    if(windowSize <= sm + 50 ) {
-      return false;
-    }
-    else {
-      navClose();
-    }
-  }
-  // function to close the top navigation
-  function navClose () {
-    $('.nav__navbar').removeClass('nav__navbar--active');
-  }
-  // function for top nav toggle
-  function navToggle() {
-    $('.nav__navbar').toggleClass('nav__navbar--active');
-    $('.icon-close').fadeIn();
-  }
-  // nav toggle event trigger
-  $('body').on('click','.js-nav__navbar',function () {
-    navToggle();
-  });
-  $(document).click(function(e) {
-       if (!$(e.target).is('.nav *')) {
-           navClose();
-       }
-   });
-
-}(jQuery));

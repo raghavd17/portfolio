@@ -8,36 +8,24 @@ var app = new Vue({
         selectedImages: [],
         isOpen: false,
         hello: 'Namasthe, ',
-        lead: `I am <span class="highlight"><span class="highlight--el"> Raghavendra S Diddimani.</span>
-                    </span><br/>Front-end &amp; Web Developer based out in <strong>Bengaluru</strong>.`,
-        aboutShort: `<p>I build wesbite & User Interface out of the visual components. Using HTML, CSS and Javascript/jQuery, Develop pixel perfect, Responsive website across various platforms.</p>
-                            <p>Currently working as
-                                <span class="highlight">
-                                    <span class="highlight--el">
-                                        <strong>Lead UI Developer</strong>
-                                    </span>
-                                </span> at
-                                <strong>Usha martin technologies</strong>. In the past I had the opportunity to work with companies such as <strong>Razorfish</strong>, <strong>Schneider electric</strong>, <strong>Ninestars</strong> & <strong>2adpro media solutions</strong>. 
-                            </p>
-                            <p>check out my profile on <a href="https://www.linkedin.com/in/raghavd17" target="_blank">linkedIn</a></p>
-                            <!-- <p>I create user interfaces, shape web page and ecommerce page.</p>-->
-                            <p class="animated slideInUp ">
-                                <a href="#" class="link-primary"> Checkout my recent works.. </a>
-                            </p>`,
-        seemore: 'See details &rarr;'
+        seemore: 'See details &rarr;',
+        footer_copy: '© Raghavendra S Diddimani - Made with Vue.js ',
+        email: 'raghavd17@gmail.com',
+        cell: '9845057300'
+        
     },
     mounted: function() {
-        this.getWorks() //,
+        this.getWorks();
             // this.getinfo()
     },
     methods: {
         getWorks: function() {
-            var app = this
-            var url = 'json/work.json'
+            var app = this;
+            var url = 'json/work.json';
             axios.get(url).then(function(response) {
-                app.works = response.data.work
+                app.works = response.data.work;
                 console.log(app.works);
-            })
+            });
         },
         // getinfo: function() {
         //     var info = this
@@ -49,15 +37,15 @@ var app = new Vue({
 
         // },
         toggleInfo: function(selectedWork) {
-            var app = this
-            app.selectedWork = selectedWork
-            app.selectedImages = app.selectedWork.images.image
+            var app = this;
+            app.selectedWork = selectedWork;
+            app.selectedImages = app.selectedWork.images.image;
             console.log(selectedWork);
             this.slideAnimation();
         },
         // slide animation function
         slideAnimation: function() {
-            this.isOpen = true
+            this.isOpen = true;
             $('body').css('overflow', 'hidden');
             // $('.btn_close').fadeIn();
             $(".modelbox").scrollTop(0);
@@ -72,7 +60,7 @@ var app = new Vue({
         // slideAnimation
         // close btn function
         btn_close: function() {
-            this.isOpen = false
+            this.isOpen = false;
                 // $('.btn_close').fadeOut();
                 // $('.modelbox').animate({
                 //     marginLeft: '100%'
