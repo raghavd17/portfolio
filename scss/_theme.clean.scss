@@ -66,12 +66,12 @@ body {
     main {
         display: grid;
         grid-template-columns: 1fr;
-        @include breakpoint-up(md) {
-            grid-template-columns: 1fr 1fr 1fr 1fr;
+        @include breakpoint-up(lg) {
+            grid-template-columns: 1fr repeat(2, minmax(auto, 10em)) 1fr;
         }
         .main {
             grid-column: initial;
-            @include breakpoint-up(md) {
+            @include breakpoint-up(lg) {
                 grid-column: 1/4;
             }
         }

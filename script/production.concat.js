@@ -10,16 +10,16 @@ var app = new Vue({
         img: [],
         selectedImages: [],
         isOpen: false,
-        hello: 'Namasthe, ',
+        hello: 'Namasthe,',
         seemore: 'See details &rarr;',
         footer_copy: '© Raghavendra S Diddimani - Made with Vue.js ',
         email: 'raghavd17@gmail.com',
         cell: '9845057300'
-        
+
     },
     mounted: function() {
         this.getWorks();
-            // this.getinfo()
+        // this.getinfo()
     },
     methods: {
         getWorks: function() {
@@ -27,7 +27,7 @@ var app = new Vue({
             var url = 'json/work.json';
             axios.get(url).then(function(response) {
                 app.works = response.data.work;
-                console.log(app.works);
+                //console.log(app.works);
             });
         },
         // getinfo: function() {
@@ -43,7 +43,7 @@ var app = new Vue({
             var app = this;
             app.selectedWork = selectedWork;
             app.selectedImages = app.selectedWork.images.image;
-            console.log(selectedWork);
+            //console.log(selectedWork);
             this.slideAnimation();
         },
         // slide animation function
@@ -64,11 +64,11 @@ var app = new Vue({
         // close btn function
         btn_close: function() {
             this.isOpen = false;
-                // $('.btn_close').fadeOut();
-                // $('.modelbox').animate({
-                //     marginLeft: '100%'
-                // }, 300);
-            $('body').removeAttr('style');
+            // $('.btn_close').fadeOut();
+            // $('.modelbox').animate({
+            //     marginLeft: '100%'
+            // }, 300);
+            //$('body').removeAttr('style');
         }
     }
 });

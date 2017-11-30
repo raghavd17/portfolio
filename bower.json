@@ -1,22 +1,20 @@
 {
-  "name": "manjunath",
-  "version": "0.0.0",
-  "homepage": "index.html",
-  "authors": [
-    "Raghavendra Diddimani <raghavd17@gmail.com>"
-  ],
-  "license": "MIT",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components"
-  ],
-  "dependencies": {
+    "name": "raghavsd.bitbucket.io",
+    "version": "1.0.0",
+    "homepage": "raghavsd.bitbucket.io",
+    "authors": [
+        "Raghavendra Diddimani <raghavd17@gmail.com>"
+    ],
+    "license": "MIT",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components"
+    ],
+    "dependencies": {
 
-  },
-  "devDependencies": {
-    "bootstrap-sass": "bootstrap-sass-official#~3.3.5",
-    "angular": "~1.4.8",
-    "angular-route": "~1.4.8"
-  }
+    },
+    "devDependencies": {
+        
+    }
 }
