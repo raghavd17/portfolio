@@ -1,22 +1,25 @@
 $img-height: 180px;
-
-
 .recentworks {
     display: grid;
+    display: -ms-grid;
     grid-template-columns: 1fr;
+    -ms-grid-columns: 1fr;
     grid-gap: 0.6rem;
     overflow: hidden;
     @include breakpoint-up(sm) {
-        grid-template-columns: repeat(2, 1fr);
+        -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
     }
     @include breakpoint-up(md) {
-        grid-template-columns: repeat(3, 1fr);
+        -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
     }
-    > .items {
+    >.items {
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
         padding: .5rem;
         position: relative;
         overflow: hidden;
-        //
         display: block;
         -webkit-border-radius: 0;
         -webkit-background-clip: padding-box;

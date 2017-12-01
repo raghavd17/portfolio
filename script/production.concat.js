@@ -1,5 +1,5 @@
-/*! lilpop - v1.0.0 - 2017-11-30
-* http://homepage.com
+/*! raghavsd.bitbucket.io - v1.0.0 - 2017-12-01
+* raghavsd.bitbucket.io
 * Copyright (c) 2017 ; Licensed  */
 var app = new Vue({
     el: "#app",
