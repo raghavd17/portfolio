@@ -1,5 +1,8 @@
 .main_header {
     display: grid;
+    display: -ms-grid;
+    -ms-grid-row: 1;
+    grid-row: 1;
     @include padding(20px 0);
     .logo {
         @include reset-margin(all);
@@ -9,22 +12,30 @@
         justify-self: center;
         @include breakpoint-up(md) {
             justify-self: end;
+            -ms-grid-column: 3;
+            grid-column: 3;
             margin-right: 10px;
         }
         a {
             font-family: 'Gruppo', cursive;
             color: $logo-color;
             font-weight: 600;
+            display: inline-block;
             span.r {
-                display: inline-block;
+                // display: inline-block;
                 color: $logo-color;
                 line-height: initial;
                 @include margin-left(18px);
                 @include margin-right(15px);
+                @include margin-top(8px);
                 -webkit-transition: all 200ms ease-in-out;
                 -moz-transition: all 200ms ease-in-out;
                 -o-transition: all 200ms ease-in-out;
                 transition: all 200ms ease-in-out;
+                display: block;
+                @-moz-document url-prefix() {
+                    @include margin-top(12px);
+                }
             }
             span.d {
                 @include pos-absolute(-24px, auto, auto, -7px);
@@ -40,9 +51,11 @@
                 color: rgba($logo-color, 0.6);
             }
             span.align-bottom {
-                @include pos-absolute(auto, auto, -20px, 0px);
+                // @include pos-absolute(auto, auto, -20px, 0px);
+                display: block;
                 font-size: 1.0rem;
                 line-height: initial;
+                @include margin-top(10px);
                 -webkit-transition: color 200ms ease-in-out;
                 -moz-transition: color 200ms ease-in-out;
                 -o-transition: color 200ms ease-in-out;

@@ -1,19 +1,28 @@
 .footer {
     border-top: 1px solid $gray-light;
+    display: -ms-grid;
     display: grid;
-    grid-template-columns: 1fr;
+    -ms-grid-row: 3;
+    grid-row: 3;
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     font-size: 0.75rem;
     padding: 0.8rem 0;
     text-align: center;
     @include breakpoint-up(md) {
+        -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
         text-align: left;
     }
     &__copy,
     &__info {
+        -ms-grid-column: 1;
+        grid-column: 1;
         padding: 0.2rem;
     }
     &__info {
+        -ms-grid-column: 2;
+        grid-column: 2;
         @include breakpoint-up(md) {
             text-align: right;
         }
