@@ -22,9 +22,12 @@
 </head>
 
 <body class="home">
-    <div class="container" id="app">
+    <div class="container">
 
-        <div class="h-100">
+
+
+
+        <div class="h-100" id="app">
             <header class="main_header">
                 <h1 class="logo">
                     <a href="index.html" title="Raghavendra S Diddmani">
@@ -43,7 +46,7 @@
                     <h2 class="section-title">
                         <span>Recent Works</span>
                     </h2>
-                    <p>Have a look at some of my works, it would be much appreciated if you could pass me your thoughts on the same. </p>
+                    <p>Have a look at some of my works, it would be much appreciated if you could pass me your thoughts on the same.      </p>
                     <div class=" recentworks" id="app">
 
                         <div class="items" v-for="work in works">
@@ -51,7 +54,7 @@
                                 <div class="img">
                                     <img v-bind:src='work.images.thumb_url' v-bind:alt='work.name' class="img-responsive" />
                                     <span class="cover">
-                                            <span class="more" class="btn" v-html="seemore"></span>
+                                <span class="more" class="btn" v-html="seemore"></span>
                                     </span>
                                 </div>
                                 <h2 class="title">{{ work.name }} </h2>
@@ -59,57 +62,40 @@
 
                         </div>
                         <!-- //.work -->
-
+                       
                     </div>
-                    <!-- //.recentworks end -->
+                        <!-- //.recentworks end -->
                 </section>
                 <!-- //.works end -->
-                <!-- model box here  -->
-                <section class="modelbox" v-bind:class="{'open': isOpen}">
+<!-- model box here  -->
+<div class="modelbox" v-bind:class="{'open': isOpen}">
 
-                    <span class="btn_close" @click="btn_close()" v-bind:class="{'open': isOpen}">
-                            <span aria-hidden="true">&times;</span>
-                    </span>
+    <span class="btn_close" @click="btn_close()" v-bind:class="{'open': isOpen}">
+        <span aria-hidden="true">&times;</span>
+    </span>
+    <header class="modelbox_header">
+        <h2>
+            <span class="highlight">
+                <span class="highlight--el">{{ selectedWork.name }}</span>
+            </span>
+            <small>{{ selectedWork.type }}</small>
+        </h2>
 
-                    <header class="modelbox_header">
-                        <div class="modelbox_header__content">
-                            <h2>
-                                <span class="highlight">
-                                        <span class="highlight--el">{{ selectedWork.name }}</span>
-                                </span>
-                                <small>{{ selectedWork.type }}</small>
-                            </h2>
-                            <!--
-                        <p> Role: {{ selectedWork.role }}
-                            <span>{{ selectedWork.category }}</span>
-                            <span v-if='selectedWork.platform'>{{ selectedWork.platform }}</span>
-                        </p> -->
-                            <ul>
-                                <li>Role: {{ selectedWork.role }} </li>
-                                <li>Technology: {{ selectedWork.technology }}</li>
-                                <li></li>
-                            </ul>
-                        </div>
+        <p> {{ selectedWork.role }}
+            <span>{{ selectedWork.category }}</span>
+            <span>{{ selectedWork.platform }}</span>
+        </p>
 
+    </header>
+    <main class="modelbox_main">
+        <p> {{ selectedWork.description }} </p>
 
-
-
-                    </header>
-                    <main class="modelbox_main">
-
-                        <p> {{ selectedWork.description }} </p>
-                        <div v-for="img in selectedImages">
-                            <img v-bind:src='img.url' v-bind:alt='selectedWork.name' />
-                        </div>
-
-
-                    </main>
-
-
-
-
-                </section>
-                <!-- //.modelbox  section end -->
+        <div v-for="img in selectedImages">
+            <img v-bind:src='img.url' v-bind:alt='selectedWork.name' />
+        </div>
+    </main>
+</div>
+<!-- //.modelbox -->
             </main>
 
 
@@ -117,16 +103,8 @@
                 <section class="footer__copy">{{footer_copy}}</section>
                 <section class="footer__info">{{email}} | {{cell}}</section>
             </footer>
-
         </div>
         <!-- /wrapper -->
-        <section class="ie_message" v-bind:class="{'ie': isIE}" v-if="isIE">
-            <main>
-                <h1>{{ie_heading}} </h1>
-                <p v-html='ie_message'></p>
-            </main>
-
-        </section>
     </div>
     <!-- //.container -->
 
@@ -134,6 +112,7 @@
     <script src="https://unpkg.com/vue@2.5.2/dist/vue.js"></script>
     <script src="https://unpkg.com/axios@0.12.0/dist/axios.min.js"></script>
     <script src="script/vue_js.js"></script>
+    <script src="script/ie_test.js"></script>
 </body>
 
 </html>

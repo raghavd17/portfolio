@@ -7,16 +7,20 @@ var app = new Vue({
         img: [],
         selectedImages: [],
         isOpen: false,
+        isIE: false,
         hello: 'Namasthe,',
         seemore: 'See details &rarr;',
         footer_copy: '© Raghavendra S Diddimani - Made with Vue.js ',
         email: 'raghavd17@gmail.com',
-        cell: '9845057300'
-
+        cell: '9845057300',
+        ie_heading: " Oop's ",
+        ie_message: " This browser doesn't support CSS Grid, <br /> try opening in other than IE Browsers "
     },
     mounted: function() {
         this.getWorks();
         // this.getinfo()
+        this.detectBrowser();
+
     },
     methods: {
         getWorks: function() {
@@ -24,7 +28,7 @@ var app = new Vue({
             var url = 'json/work.json';
             axios.get(url).then(function(response) {
                 app.works = response.data.work;
-                //console.log(app.works);
+                console.log(app.works);
             });
         },
         // getinfo: function() {
@@ -66,6 +70,34 @@ var app = new Vue({
             //     marginLeft: '100%'
             // }, 300);
             //$('body').removeAttr('style');
+        },
+        detectBrowser: function() {
+            this.isIE = false;
+            // Opera 8.0+
+            var isOpera = (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
+
+            // Firefox 1.0+
+            var isFirefox = typeof InstallTrigger !== 'undefined';
+
+         
+            // Internet Explorer 6-11
+            var isIE = /*@cc_on!@*/ false || !!document.documentMode;
+
+            // Edge 20+
+            var isEdge = !isIE && !!window.StyleMedia;
+
+            // Chrome 1+
+            var isChrome = !!window.chrome && !!window.chrome.webstore;
+
+            // Blink engine detection
+            var isBlink = (isChrome || isOpera) && !!window.CSS;
+
+            if (isIE || isEdge) {
+                this.isIE = true;
+            } else {
+                this.isIE = false;
+            }
+
         }
     }
 });

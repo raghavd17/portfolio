@@ -1,8 +1,11 @@
 .modelbox {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr;
     width: 100%;
     height: 100vh;
     background: $gray-lightest;
-    color: $white;
+    color: $gray;
     font-size: 30px;
     overflow: auto;
     z-index: 100;
@@ -13,33 +16,29 @@
     -o-transition: all 300ms ease-in-out;
     -ms-transition: all 300ms ease-in-out;
     transition: all 300ms ease-in-out;
+    @include breakpoint-up(md) {
+        grid-template-columns: 1fr repeat(2, minmax(10em, auto)) 1fr;
+    }
     &.open {
         transform: translateX(0%);
-        
-        
     }
-    &_content {
-        height: auto;
-        background: $gray-lightest;
-        width: 80%;
-        margin: 0 auto;
-        text-align: center;
-        padding: 65px 0 35px;
-        color: $gray;
-        img {
-            border: 0;
-            text-align: center;
-            margin-bottom: 55px;
-            max-width: 100%;
-        }
-    }
-    /* .content end*/
     &_header {
         background: $white;
-        text-align: center;
-        height: 220px;
-        padding-top: 50px;
+        display: grid;
+        grid-row: 1;
+        grid-template-columns: 1fr;
+        @include padding(50px 20px 0 20px);
         margin: 0;
+        @include breakpoint-up(md) {
+            grid-column: 1/5;
+            grid-template-columns: 1fr repeat(2, minmax(10em, auto)) 1fr;
+        }
+        &__content {
+            grid-column: 1;
+            @include breakpoint-up( md) {
+                grid-column: 2/4;
+            }
+        }
         h2 {
             margin: 0;
             margin-bottom: 5px;
@@ -59,10 +58,7 @@
             }
         }
         p {
-            // font-size: 13px;
             color: $gray;
-            width: 60%;
-            margin: 0 auto;
         }
         a {
             display: inline-block;
@@ -76,6 +72,23 @@
         }
     }
     /* .header end*/
+    &_main {
+        background: $gray-lightest;
+        grid-row: 2;
+        grid-column: 1;
+        color: $gray;
+        @include padding(50px 20px 0 20px);
+        @include breakpoint-up(md) {
+            grid-column: 2/4;
+        }
+        img {
+            border: 0;
+            text-align: center;
+            margin-bottom: 55px;
+            max-width: 100%;
+        }
+    }
+    /* .content end*/
     .btn_close {
         @include pos-fixed(2.5%, 2.5%, auto, auto);
         margin: 0;

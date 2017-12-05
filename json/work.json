@@ -1,29 +1,24 @@
 {
     "work": [{
             "id": 1,
-            "name": "Story",
-            "type": "iPad App (POC)",
-            "role": "UI & UX Design",
-            "category": "App",
-            "platform ": "iOS",
-            "description": "Short description about the painting",
+            "name": "Jump Global website",
+            "type": "Corparate Website",
+            "role": "UI Development",
+            "category": "Website",
+            "platform": "Web",
+            "technology": "HTML5, CSS, jQuery & Twitter Bootstrap ",
+            "description": "Short description about the website",
             "images": {
-                "thumb_url": "http://weallneed.design/img/unbxd/unbxd-banner.jpg",
+                "thumb_url": "/img/works/jumpglobal/jumpglobal.png",
                 "image": [{
                     "id": "1",
-                    "url": "http://weallneed.design/img/unbxd/unbxd-website-slide1.jpg"
-                }, {
-                    "id": "2",
-                    "url": "http://www.coloreflect.com/img/works/story/2.png"
+                    "url": "../img/works/jumpglobal/home1.png"
                 }, {
                     "id": "3",
-                    "url": "http://www.coloreflect.com/img/works/story/3.png"
+                    "url": "../img/works/jumpglobal/home2.png"
                 }, {
                     "id": "4",
-                    "url": "http://www.coloreflect.com/img/works/story/4.png"
-                }, {
-                    "id": "5",
-                    "url": "http://www.coloreflect.com/img/works/story/5.png"
+                    "url": "../img/works/jumpglobal/contact.png"
                 }]
             }
 
