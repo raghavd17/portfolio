@@ -30,22 +30,47 @@ $img-height: 180px;
         -ms-grid-columns: 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr;
     }
-    > .item {
+    >.item {
         display: block;
         color: $gray;
         padding: .5rem;
         position: relative;
         border-top: 1px solid $link-color;
         border-left: 1px solid $link-color;
-        box-shadow: 1px 2px 0 $gray-light;
+        box-shadow: 1px 0px 0 $gray;
         transition: all 200ms ease-in-out;
         transform-origin: center;
         background: $white;
-        // &:hover {
-        //     transform: scale(1.2);
-        //     position: relative;
-        //     z-index: 2;
-        // }
+        -webkit-transition: box-shadow 300ms ease-in-out;
+        transition: box-shadow 300ms ease-in-out;
+        &::before {
+            @include pos-absolute(auto, 0, 0, 0);
+            content: '';
+            height: 2px;
+            width: 0%;
+            background: $link-color;
+            -webkit-transition: width 300ms ease-in-out;
+            transition: width 300ms ease-in-out;
+        }
+        &::after {
+            @include pos-absolute(auto, 0, 0, 0);
+            content: '';
+            height: 2px;
+            width: 100%;
+            background: $gray;
+            -webkit-transition: width 300ms ease-in-out;
+            transition: width 300ms ease-in-out;
+        }
+        &:hover {
+            box-shadow: 1px 0px 0 $link-color;
+            &::before {
+                width: 100%;
+            }
+            &::after {
+                width: 0%;
+                // transform: translate(1000px, 0px);
+            }
+        }
         &:first-child,
         &:nth-child(4n+4) {
             @include breakpoint(sm, md) {
@@ -74,10 +99,12 @@ $img-height: 180px;
             text-transform: uppercase;
             cursor: pointer;
             align-self: end;
+            transition: margin 300ms ease-in-out;
             &:hover {
                 color: $gray-dark;
                 font-weight: 600;
                 text-decoration: none;
+                margin-left: 5px;
             }
         }
         & img {
