@@ -39,23 +39,20 @@
 
 
             <main>
-                <section class="works">
-                    <h2 class="section-title">
-                        <span>Recent Works</span>
+                <section class="works" id="app">
+                    <h2>
+                        <span class="highlight"><span class="highlight--el"> Recent Works</span></span>
                     </h2>
                     <p>Have a look at some of my works, it would be much appreciated if you could pass me your thoughts on the same. </p>
-                    <div class=" recentworks" id="app">
-
-                        <div class="items" v-for="work in works">
-                            <a class="thumbnail" id="" href="#" @click.prevent="toggleInfo(work)">
-                                <div class="img">
-                                    <img v-bind:src='work.images.thumb_url' v-bind:alt='work.name' class="img-responsive" />
-                                    <span class="cover">
-                                            <span class="more" class="btn" v-html="seemore"></span>
-                                    </span>
-                                </div>
-                                <h2 class="title">{{ work.name }} </h2>
-                            </a>
+                    <div class="recentworks">
+                        <div class="item" v-for="work in works">
+                            <figure @click.prevent="toggleInfo(work)">
+                                <img v-bind:src='work.images.thumb_url' v-bind:alt='work.name' class="img-responsive" />
+                                <figcaption class="title">
+                                    <span class="highlight"><span class="highlight--el">{{ work.name }} </span></span>
+                                </figcaption>
+                                <a href="javascript:" class="more" class="btn" v-html="seemore"></a>
+                            </figure>
 
                         </div>
                         <!-- //.work -->
@@ -85,8 +82,8 @@
                             <span v-if='selectedWork.platform'>{{ selectedWork.platform }}</span>
                         </p> -->
                             <ul>
-                                <li>Role: {{ selectedWork.role }} </li>
-                                <li>Technology: {{ selectedWork.technology }}</li>
+                                <li><strong>Role:</strong> {{ selectedWork.role }} </li>
+                                <li><strong>Technology:</strong> {{ selectedWork.technology }}</li>
                                 <li></li>
                             </ul>
                         </div>
@@ -98,9 +95,12 @@
                     <main class="modelbox_main">
 
                         <p> {{ selectedWork.description }} </p>
-                        <div v-for="img in selectedImages">
-                            <img v-bind:src='img.url' v-bind:alt='selectedWork.name' />
-                        </div>
+
+                        <figure v-for="img in selectedImages">
+                            <figcaption>{{img.caption}}</figcaption>
+                            <img v-bind:src='img.url' v-bind:alt='img.caption' />
+                        </figure>
+
 
 
                     </main>

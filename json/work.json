@@ -12,12 +12,15 @@
                 "thumb_url": "/img/works/jumpglobal/jumpglobal.png",
                 "image": [{
                     "id": "1",
+                    "caption": "home page",
                     "url": "../img/works/jumpglobal/home1.png"
                 }, {
                     "id": "3",
+                    "caption": "home page 2",
                     "url": "../img/works/jumpglobal/home2.png"
                 }, {
                     "id": "4",
+                    "caption": "contact page",
                     "url": "../img/works/jumpglobal/contact.png"
                 }]
             }
@@ -34,9 +37,11 @@
                 "thumb_url": "http://weallneed.design/img/nudge/thenudge-banner.jpg",
                 "image": [{
                     "id": "1",
+                    "caption": "home page",
                     "url": "http://weallneed.design/img/nudge/nudge-website-2.jpg"
                 }, {
                     "id": "2",
+                    "caption": "home page",
                     "url": "http://www.coloreflect.com/img/works/story/2.png"
                 }]
             }
@@ -52,15 +57,19 @@
                 "thumb_url": "http://www.coloreflect.com/img/works/banking_thumb.png",
                 "image": [{
                     "id": "1",
+                    "caption": "home page",
                     "url": "http://www.coloreflect.com/img/works/story/1.png"
                 }, {
                     "id": "2",
+                    "caption": "home page",
                     "url": "http://www.coloreflect.com/img/story/2.png"
                 }, {
                     "id": "3",
+                    "caption": "home page",
                     "url": "http://www.coloreflect.com/img/story/3.png"
                 }, {
                     "id": "4",
+                    "caption": "home page",
                     "url": "http://www.coloreflect.com/img/story/4.png"
                 }]
             }
@@ -76,9 +85,11 @@
                 "thumb_url": "http://www.coloreflect.com/img/works/fold_thumb.png",
                 "image": [{
                     "id": "1",
+                    "caption": "home page",
                     "url": "http://www.coloreflect.com/img/story/1.png"
                 }, {
                     "id": "2",
+                    "caption": "home page",
                     "url": "http://www.coloreflect.com/img/story/2.png"
                 }]
             }
@@ -94,9 +105,11 @@
                 "thumb_url": "http://www.coloreflect.com/img/works/fastsport_thumb.png",
                 "image": [{
                     "id": "1",
+                    "caption": "home page",
                     "url": "http://www.coloreflect.com/img/story/1.png"
                 }, {
                     "id": "2",
+                    "caption": "home page",
                     "url": "http://www.coloreflect.com/img/story/2.png"
                 }]
             }

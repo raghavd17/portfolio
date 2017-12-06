@@ -1,111 +1,107 @@
-    $img-height: 180px;
-    .recentworks {
-        display: grid;
-        display: -ms-grid;
-        grid-template-columns: 1fr;
-        -ms-grid-columns: 1fr;
-        grid-gap: 0.6rem;
-        overflow: hidden;
+.works {
+    h2 {
+        font-weight: 600;
         @include breakpoint-up(sm) {
-            -ms-grid-columns: 1fr 1fr;
-            grid-template-columns: 1fr 1fr;
+            font-size: 2rem;
         }
         @include breakpoint-up(md) {
-            -ms-grid-columns: 1fr 1fr 1fr;
-            grid-template-columns: 1fr 1fr 1fr;
+            font-size: 2.5rem;
         }
-        >.items {
-            padding: .5rem;
-            position: relative;
-            overflow: hidden;
-            display: block;
-            -webkit-border-radius: 0;
-            -webkit-background-clip: padding-box;
-            -moz-border-radius: 0;
-            -moz-background-clip: padding;
-            border-radius: 0;
-            background-clip: padding-box;
-            border: 0 none;
-            margin-bottom: 10px;
-            padding: 0;
-            text-decoration: none;
-            color: $gray;
-            background: rgba($link-color, 0.3);
-            padding: .5rem;
-            position: relative;
-            &:first-child,
-            &:nth-child(4n+4) {
-                @include breakpoint(sm, md) {
-                    grid-column: auto / span 2;
-                }
-            }
-            &::before {
-                @include pos-absolute(0, 0, 0, 0);
-                content: ' ';
-                display: block;
-                height: $img-height;
-                width: 100%;
-                background: rgba($highlight, 0.5);
-                z-index: -1;
-                transform: rotate(-2deg);
-            }
-            /// from here 
-            & .img {
-                display: block;
-                width: 100%;
-                overflow: hidden;
-                height: $img-height;
-                margin: 0 0 20px;
-                position: relative;
-            }
-            & .title {
-                text-transform: capitalize;
-                display: block;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-                font-size: 1rem;
-                color: $gray-dark;
-                text-shadow: 1px 1px 0px rgba($gray, 0.4);
-            }
-            & .more {
-                @include pos-absolute(auto, 0, 25px, auto);
-                height: 32px;
-                line-height: 32px;
-                padding: 0 20px;
-                font-size: 0.75rem;
-                text-transform: uppercase;
-                text-shadow: 1px 1px 0px rgba($white, 0.5);
-                box-shadow: -1px 1px 0px rgba($white, 0.5);
-                background: rgba($gray, 0.9);
-                color: $white;
-                transform: translate(1000px, 0px);
-                -webkit-transition: all 300ms ease-in-out;
-                -moz-transition: all 300ms ease-in-out;
-                -o-transition: all 300ms ease-in-out;
-                -ms-transition: all 300ms ease-in-out;
-                transition: all 300ms ease-in-out;
-            }
-            & img {
-                width: 100%;
-                @include pos-absolute(0, auto, auto, 0);
-                font-size: 1rem;
-                color: $gray;
-            }
-            &:hover {
-                color: $gray;
-                text-decoration: none;
-                & img {
-                    -webkit-filter: saturate(0%);
-                }
-                .more {
-                    transform: translate(10px, 10px);
-                    &:hover {
-                        color: $link-color;
-                    }
-                }
-            }
-            // to here
-            //// 
+        @include breakpoint-up(lg) {
+            font-size: 3rem;
         }
     }
+}
+
+$img-height: 180px;
+.recentworks {
+    display: grid;
+    display: -ms-grid;
+    grid-template-columns: 1fr;
+    -ms-grid-columns: 1fr;
+    grid-gap: 0.6rem;
+    overflow: hidden;
+    padding: 2px;
+    @include breakpoint-up(sm) {
+        -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    }
+    @include breakpoint-up(md) {
+        -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    > .item {
+        display: block;
+        color: $gray;
+        padding: .5rem;
+        position: relative;
+        border-top: 1px solid $link-color;
+        border-left: 1px solid $link-color;
+        box-shadow: 1px 2px 0 $gray-light;
+        transition: all 200ms ease-in-out;
+        transform-origin: center;
+        background: $white;
+        // &:hover {
+        //     transform: scale(1.2);
+        //     position: relative;
+        //     z-index: 2;
+        // }
+        &:first-child,
+        &:nth-child(4n+4) {
+            @include breakpoint(sm, md) {
+                grid-column: auto / span 2;
+            }
+        }
+        /// from here 
+        figure {
+            @include reset-margin(all);
+            display: grid;
+            grid-template-rows: 1fr auto auto;
+            min-height: 200px;
+        }
+        & .title {
+            text-transform: capitalize;
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-size: 1rem;
+            color: $gray;
+            margin: 5px 0;
+        }
+        & .more {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            cursor: pointer;
+            align-self: end;
+            &:hover {
+                color: $gray-dark;
+                font-weight: 600;
+                text-decoration: none;
+            }
+        }
+        & img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            font-size: 1rem;
+            color: $gray;
+        }
+        &:hover {
+            color: $gray;
+            text-decoration: none;
+            & img {
+                -webkit-filter: saturate(0%);
+            }
+            & .title {
+                color: $gray-dark;
+            }
+        }
+        // to here
+        a {
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+}

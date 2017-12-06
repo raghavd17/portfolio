@@ -1,4 +1,4 @@
-/*! raghavsd.bitbucket.io - v1.0.0 - 2017-12-05
+/*! raghavsd.bitbucket.io - v1.0.0 - 2017-12-06
 * raghavsd.bitbucket.io
 * Copyright (c) 2017 ; Licensed  */
 var app = new Vue({
