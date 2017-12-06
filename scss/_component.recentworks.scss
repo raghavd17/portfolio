@@ -50,6 +50,7 @@ $img-height: 180px;
             width: 0%;
             background: $link-color;
             -webkit-transition: width 300ms ease-in-out;
+            -o-transition: width 300ms ease-in-out;
             transition: width 300ms ease-in-out;
         }
         &::after {
@@ -59,17 +60,8 @@ $img-height: 180px;
             width: 100%;
             background: $gray;
             -webkit-transition: width 300ms ease-in-out;
+            -o-transition: width 300ms ease-in-out;
             transition: width 300ms ease-in-out;
-        }
-        &:hover {
-            box-shadow: 1px 0px 0 $link-color;
-            &::before {
-                width: 100%;
-            }
-            &::after {
-                width: 0%;
-                // transform: translate(1000px, 0px);
-            }
         }
         &:first-child,
         &:nth-child(4n+4) {
@@ -93,19 +85,18 @@ $img-height: 180px;
             font-size: 1rem;
             color: $gray;
             margin: 5px 0;
+            -webkit-transition: margin 300ms ease-in-out;
+            -o-transition: margin 300ms ease-in-out;
+            transition: margin 300ms ease-in-out;
         }
         & .more {
             font-size: 0.75rem;
             text-transform: uppercase;
             cursor: pointer;
             align-self: end;
+            -webkit-transition: margin 300ms ease-in-out;
+            -o-transition: margin 300ms ease-in-out;
             transition: margin 300ms ease-in-out;
-            &:hover {
-                color: $gray-dark;
-                font-weight: 600;
-                text-decoration: none;
-                margin-left: 5px;
-            }
         }
         & img {
             width: 100%;
@@ -115,18 +106,22 @@ $img-height: 180px;
             color: $gray;
         }
         &:hover {
-            color: $gray;
-            text-decoration: none;
+            box-shadow: 1px 0px 0 $link-color;
+            &::before {
+                width: 100%;
+            }
+            &::after {
+                width: 0%;
+                // transform: translate(1000px, 0px);
+            }
             & img {
                 -webkit-filter: saturate(0%);
             }
-            & .title {
+            .more,
+            .title {
+                margin-left: 5px;
                 color: $gray-dark;
-            }
-        }
-        // to here
-        a {
-            &:hover {
+                font-weight: 600;
                 text-decoration: none;
             }
         }
